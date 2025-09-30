@@ -1,9 +1,8 @@
 # RAG-based Medical Q&A Chatbot
-
-This project demonstrates a **Retrieval-Augmented Generation (RAG)** system for a medical question-answering chatbot. The system uses a local Large Language Model (LLM) to answer questions based on a provided knowledge base of PDF documents, ensuring factual and context-aware responses without relying on external APIs. It uses LangChain as the framework. The model has been chosen for the purpose on running this project on an Apple M1 8GB RAM.
+This project demonstrates a **Retrieval-Augmented Generation (RAG)** system for a medical question-answering chatbot. The system uses a local Large Language Model (LLM) to answer questions based on a provided knowledge base of PDF documents, ensuring factual and context-aware responses without relying on external APIs. It uses LangChain as the framework.
 ---
 
-### Key Features 🔍
+### Key Features
 
 -   **Document Loading**: Loads medical information from multiple PDF files using `PyPDFLoader` and `DirectoryLoader`.
 -   **Text Splitting**: Chunks the raw text from the PDFs into smaller, manageable pieces using `RecursiveCharacterTextSplitter`.
@@ -11,6 +10,7 @@ This project demonstrates a **Retrieval-Augmented Generation (RAG)** system for 
 -   **FAISS Vector Store**: Stores the generated embeddings in a local FAISS database for fast and efficient semantic search.
 -   **Local LLM Integration**: Uses a local `Llama-3.2-3B-Instruct-Q2_K.gguf` model via `LlamaCpp` to generate answers, keeping the entire process offline and private.
 -   **Retrieval Chain**: Constructs a RAG chain that first retrieves the most relevant document chunks based on a user's query and then uses the LLM to formulate a precise answer, adhering strictly to the provided context.
+-   **Low Resource Usage**: Model is aimed to run on an Apple M1 8GB RAM
 
 ---
 
